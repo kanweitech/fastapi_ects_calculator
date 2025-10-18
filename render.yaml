@@ -3,6 +3,7 @@ services:
  name: ects-calculator
  env: python
  plan: free
+ repo: https://github.com/kanweitech/fastapi_ects_calculator.git
  buildCommand: pip install -r requirements.txt
  startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
 
@@ -10,7 +11,7 @@ services:
 name: ects-frontend
 env: python
 plan: free
-repo: https://github.com/<YOUR-USERNAME>/<YOUR-REPO>
+repo: https://github.com/kanweitech/fastapi_ects_calculator.git
 branch: main
 buildCommand: pip install -r frontend/requirements.txt
 startCommand: streamlit run frontend/streamlit_app.py --server.port $PORT --server.address 0.0.0.0
