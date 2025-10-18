@@ -44,7 +44,7 @@ with st.form("ects_form"):
                     detail = r.text
                 st.error(f"Server returned {r.status_code}: {detail}")
         except requests.exceptions.RequestException as e:
-            st.error(f"Error contacting backend: {e}")            st.json(data)
+            st.error(f"Error contacting backend: {e}")
 
         else:
             # show server error details if available
