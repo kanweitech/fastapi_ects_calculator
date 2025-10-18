@@ -1,6 +1,14 @@
-
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, confloat
+
+# Enable CORS so the Streamlit frontend or other clients can call this API
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app = FastAPI(title="ECTS Calculator API")
 
@@ -27,3 +35,10 @@ async def calculate(req: CalculateRequest):
 @app.get("/")
 async def root():
     return {"message": "ECTS Calculator API - use /calculate"}
+
+
+
+
+
+
+
