@@ -33,10 +33,11 @@ with st.form("ects_form"):
             if r.status_code == 200:
                 data = r.json()
                 st.success(f"{name_of_course} — {data['ECTS']} ECTS (conversion factor: {data['conversion_factor']})")
-                st.write("**Request sent:**")
-                st.json(payload)
-                st.write("**Response:**")
-                st.json(data)
+            
+                #st.write("**Request sent:**")
+                #st.json(payload)
+                #st.write("**Response:**")
+                #st.json(data)
             else:
                 # show server error details if available
                 try:
