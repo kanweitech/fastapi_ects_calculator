@@ -6,7 +6,7 @@ import os
 st.set_page_config(page_title="ECTS Calculator", layout="centered")
 
 
-BACKEND_URL = os.environ.get("BACKEND_URL", "http://localhost:8000")
+BACKEND_URL = os.environ.get("BACKEND_URL", "https://fastapi-ects-calculator.onrender.com/")
 CALCULATE_ENDPOINT = BACKEND_URL.rstrip("/") + "/calculate"
 
 
